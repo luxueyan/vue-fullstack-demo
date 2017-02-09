@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/common/filters.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/common/</a> filters.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.26% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>10/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.27% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/55</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.09% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">13.33% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>4/30</span>
+      </div>
+      <div class='fl pad1y'>
+        <span class="strong">1 branch</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import _ from 'lodash'
+import moment from 'moment'
+import numeral from 'numeral'
+&nbsp;
+export default <span class="fstat-no" title="function not covered" >{</span>
+  install(Vue, options) {
+<span class="cstat-no" title="statement not covered" >    V</span>ue.filter('ktCurrency', <span class="fstat-no" title="function not covered" >(value, prefix = '￥', suffix = '') =&gt; <span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >{</span></span></span>
+<span class="cstat-no" title="statement not covered" >      if (_.isNumber(value)) {</span>
+<span class="cstat-no" title="statement not covered" >        r</span>eturn prefix + numeral(_.round(value, 2)).format('0,0.00') + suffix
+      } else {
+<span class="cstat-no" title="statement not covered" >        r</span>eturn value
+      }
+    })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    V</span>ue.filter('ktPercent', <span class="fstat-no" title="function not covered" >(value, decimal = 2, multi = 100, unit = '%') =&gt; <span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >{</span></span></span></span>
+<span class="cstat-no" title="statement not covered" >      r</span>eturn _.isNumber(value) ? _.round(value * multi, decimal).toFixed(decimal) + (unit || '') : ''
+    })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    V</span>ue.filter('ktRangePercent', <span class="fstat-no" title="function not covered" >(value, value2, decimal = 2) =&gt; <span class="cstat-no" title="statement not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >      v</span>alue = _.isNumber(value) ? _.round(value, decimal).toFixed(decimal) : ''
+<span class="cstat-no" title="statement not covered" >      v</span>alue2 = _.isNumber(value2) ? _.round(value2, decimal).toFixed(decimal) : ''
+<span class="cstat-no" title="statement not covered" >      if (value === value2) {</span>
+<span class="cstat-no" title="statement not covered" >        r</span>eturn value + '%'
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      r</span>eturn `${value}-${value2}%`
+    })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    V</span>ue.filter('ktRound', <span class="fstat-no" title="function not covered" >(value, decimal = 0) =&gt; <span class="cstat-no" title="statement not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >      r</span>eturn _.round(value, decimal)
+    })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    V</span>ue.filter('ktAppend', <span class="fstat-no" title="function not covered" >(value, str) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      r</span>eturn (_.isNil(value) ? '' : value) + str
+    })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    V</span>ue.filter('ktPrepend', <span class="fstat-no" title="function not covered" >(value, str) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      r</span>eturn str + (_.isNil(value) ? '' : value)
+    })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    V</span>ue.filter('ktPositveNumber', <span class="fstat-no" title="function not covered" >(value) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      if (value &gt; 0 &amp;&amp; _.isNumber(value)) {</span>
+<span class="cstat-no" title="statement not covered" >        r</span>eturn '+' + value
+      }
+<span class="cstat-no" title="statement not covered" >      r</span>eturn value
+    })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    V</span>ue.filter('ktNull', <span class="fstat-no" title="function not covered" >(value, str) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      r</span>eturn value || str || '-'
+    })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    V</span>ue.filter('moment', <span class="fstat-no" title="function not covered" >(date, format) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      r</span>eturn moment(date).format(format)
+    })
+  }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Dec 29 2016 19:50:29 GMT+0800 (CST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
