@@ -27,7 +27,7 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue client/src",
-    "coveralls": "cat ./coverage/lcov/lcov.info | ./node_modules/.bin/coveralls"
+    "coveralls": "cat ./test/unit/coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
