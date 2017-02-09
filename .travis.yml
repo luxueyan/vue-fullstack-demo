@@ -5,7 +5,7 @@ node_js:
   # npm install -g npm@latest
   # npm install --registry http://registry.npmjs.org
 install: |
-  npm install
+  yarn install
 script:
   - npm run unit
 after_script:
