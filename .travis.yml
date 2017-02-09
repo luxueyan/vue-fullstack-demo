@@ -7,7 +7,7 @@ node_js:
 install: |
   npm install
 script:
-  - npm test
+  - npm run unit
 after_script:
   - npm run coveralls
 # addons:
